@@ -1,0 +1,35 @@
+---
+import AstroLogo from "./AstroLogo.astro";
+
+interface Props {
+  scale?: boolean;
+}
+
+const { scale } = Astro.props as Props;
+---
+
+<a href="/" class:list={["logo", { "scale": scale }]}>
+  <AstroLogo size="40" />
+  <span class="text bold">Astro</span>
+  <span class="text orange bold">Blog</span>
+</a>
+
+<style>
+  a {
+    text-decoration: none;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .text {
+    font-size: 1.5rem;
+    margin-left: 5px;
+  }
+
+  .scale {
+    transform: scale(5);
+  }
+</style>

@@ -1,0 +1,28 @@
+---
+import Item from './Item.astro';
+const menuItems = [
+  {
+    label: 'Home',
+    url: '/',
+  },
+  {
+    label: 'Blog',
+    url: '/posts'
+  },
+];
+---
+
+<nav>
+  <ul class="list">
+    {menuItems.map(item => <Item item={item} />)}
+  </ul>
+</nav>
+
+<style>
+  .list {
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+    padding: 0;
+  }
+</style>

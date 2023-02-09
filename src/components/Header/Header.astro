@@ -1,0 +1,33 @@
+---
+import Container from '@layouts/Container.astro';
+import Logo from './Logo.astro'
+import Menu from '../Menu/index.astro';
+import ThemeToggleButton from './ThemeToggleButton.astro';
+---
+<header>
+  <Container>
+    <div class="wrapper">
+      <Logo />
+      <Menu />
+      <ThemeToggleButton />
+    </div>
+  </Container>
+</header>
+
+<style>
+  header {
+    height: var(--theme-navbar-height);
+    background: var(--theme-navbar-bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #888888;
+    box-shadow: 0 0 15px -7px #000000;
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+</style>

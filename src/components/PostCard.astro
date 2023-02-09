@@ -1,0 +1,49 @@
+---
+interface IPostCardProps {
+  post: IPost;
+}
+
+interface IPost {
+  id: number;
+  title: string;
+  body: string;
+  userId: number;
+  tags: string[];
+  reactions: number;
+}
+
+const { post } = Astro.props as IPostCardProps;
+const { id, title, body } = post;
+const preparedBody = body.length > 296 ? body.substring(0, 300) + '...' : body;
+---
+
+<div class="post">
+  <h3 class="title orange">
+    <a href={`/posts/${id}`}>{title}</a>
+  </h3>
+  <p class="description">{preparedBody}</p>
+</div>
+
+<style>
+  .post {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    background: rgba(3, 3, 3, 0.1);
+    padding: 10px 20px;
+  }
+
+  .title {
+    margin-bottom: 10px;
+  }
+
+  .description {
+    /* margin-top: auto; */
+    margin-bottom: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+</style>

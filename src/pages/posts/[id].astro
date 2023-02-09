@@ -1,0 +1,20 @@
+---
+import MainLayout from '@layouts/MainLayout.astro';
+
+export async function getStaticPaths() {
+  const res = await fetch('https://dummyjson.com/posts');
+  const data = await res.json();
+  const { posts } = data;
+  return posts.map(post => ({
+    params: { id: post.id.toString() },
+    props: { ...post }
+  })); 
+};
+
+const { title, body } = Astro.props;
+---
+
+<MainLayout title={title}>
+  <h1>{title}</h1>
+  <p>{body}</p>
+</MainLayout>

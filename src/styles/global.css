@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--theme-text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dark-theme body::before {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -999;
+  background: var(--theme-bg-gradient);
+}
+
+.text {
+  color: var(--theme-text);
+}
+
+.orange {
+  color: var(--theme-color-orange);
+}
+
+.bold {
+  font-weight: bold;
+}

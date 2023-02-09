@@ -1,0 +1,35 @@
+/*
+	Define common sizes and spacings
+*/
+:root {
+  --theme-navbar-height: 6rem;
+  --theme-mobile-toc-height: 4rem;
+  --theme-bg: #eee7f4;
+  --theme-text: #2a233e;
+  --color-text: var(--theme-text);
+
+  --theme-bg-gradient-top: var(--theme-bg);
+  --theme-bg-gradient-bottom: hsl(251, 29%, 11%);
+}
+
+:root.dark-theme {
+  --theme-navbar-bg: var(--theme-bg);
+  --theme-bg: #2a233e;
+  --theme-text: #eee7f4;
+  --color-text: var(--theme-text);
+}
+
+/*
+	Define common sizes and spacings
+*/
+:root {
+  --theme-color-orange: #ff7e33;
+
+  --theme-bg-gradient: linear-gradient(
+    180deg,
+    var(--theme-bg-gradient-top),
+    var(--theme-bg-gradient-top)
+      calc(var(--theme-navbar-height) + var(--theme-mobile-toc-height)),
+    var(--theme-bg-gradient-bottom)
+  );
+}
