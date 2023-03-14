@@ -5,6 +5,7 @@ export async function getStaticPaths() {
   const res = await fetch('https://dummyjson.com/posts');
   const data = await res.json();
   const { posts } = data;
+
   return posts.map(post => ({
     params: { id: post.id.toString() },
     props: { ...post }
